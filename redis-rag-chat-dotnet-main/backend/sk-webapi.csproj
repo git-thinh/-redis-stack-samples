@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <RootNamespace>sk_webapi</RootNamespace>
+    <NoWarn>SKEXP0011</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Microsoft.KernelMemory.WebClient" Version="0.26.240116.2" />
+    <PackageReference Include="Microsoft.KernelMemory.SemanticKernelPlugin" Version="0.26.240116.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.0.1" />
+    <PackageReference Include="Microsoft.SemanticKernel.Abstractions" Version="1.0.1" />
+    <PackageReference Include="Redis.OM" Version="0.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="plugins\Intent\IntentExtraction\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="plugins\Intent\IntentExtraction\skprompt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="plugins\Intent" />
+  </ItemGroup>
+
+</Project>
